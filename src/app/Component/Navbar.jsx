@@ -29,8 +29,8 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-6 font-medium text-white">
                     <a href="#home" className="hover:text-cyan-400 transition-colors">Home</a>
                     <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
-                    <a href="/skills" className="hover:text-cyan-400 transition-colors">Skill</a>
-                    <a href="/contact" className="hover:text-cyan-400 transition-colors">Contact</a>
+                    <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
+                    <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
                 </div>
 
                 {/* Resume button*/}

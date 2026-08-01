@@ -3,159 +3,154 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FaGraduationCap, FaCertificate, FaCode, FaRocket, FaLightbulb } from 'react-icons/fa';
 
-// React Icons
-import { SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb } from 'react-icons/si';
-import { FaGraduationCap, FaCertificate, FaUserAlt } from 'react-icons/fa';
-
-// Register ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-    // GSAP Refs
     const sectionRef = useRef(null);
     const textRef = useRef(null);
-    const skillItemsRef = useRef([]);
+    const cardsRef = useRef([]);
 
-    // GSAP Animations
     useEffect(() => {
         const section = sectionRef.current;
         const text = textRef.current;
-        const skills = skillItemsRef.current;
+        const cards = cardsRef.current;
 
-        // Text Content Animation
+        // Header and Text Animation
         if (text) {
-            gsap.fromTo(text.children,
-                {
-                    opacity: 0,
-                    y: 50
-                },
+            gsap.fromTo(
+                text.children,
+                { opacity: 0, y: 40 },
                 {
                     opacity: 1,
                     y: 0,
                     stagger: 0.2,
-                    duration: 1,
+                    duration: 0.8,
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: section,
                         start: 'top 80%',
-                        end: 'top 20%',
-                        toggleActions: 'play none none none'
-                    }
+                    },
                 }
             );
         }
 
-        // Skills Grid Staggered Animation
-        if (skills.length > 0) {
-            gsap.fromTo(skills,
-                {
-                    opacity: 0,
-                    scale: 0.8
-                },
+        // Feature Cards Animation
+        if (cards.length > 0) {
+            gsap.fromTo(
+                cards,
+                { opacity: 0, y: 30, scale: 0.95 },
                 {
                     opacity: 1,
+                    y: 0,
                     scale: 1,
-                    stagger: 0.1,
+                    stagger: 0.15,
                     duration: 0.8,
-                    ease: 'power3.out',
+                    ease: 'power2.out',
                     scrollTrigger: {
-                        trigger: skills[0],
-                        start: 'top 90%',
-                        toggleActions: 'play none none none'
-                    }
+                        trigger: cards[0],
+                        start: 'top 85%',
+                    },
                 }
             );
         }
     }, []);
 
-    // Skills Stack Data
-    const skillsList = [
-        { name: 'HTML5', icon: SiHtml5 },
-        { name: 'CSS3', icon: SiCss },
-        { name: 'JavaScript', icon: SiJavascript },
-        { name: 'React', icon: SiReact },
-        { name: 'Next.js', icon: SiNextdotjs },
-        { name: 'Tailwind CSS', icon: SiTailwindcss },
-        { name: 'Node.js', icon: SiNodedotjs },
-        { name: 'MongoDB', icon: SiMongodb },
+    const highlights = [
+        {
+            icon: <FaCode className="text-cyan-400 text-3xl" />,
+            title: "Clean Code",
+            desc: "Writing maintainable, scalable, and optimized code for better performance."
+        },
+        {
+            icon: <FaRocket className="text-cyan-400 text-3xl" />,
+            title: "Fast Delivery",
+            desc: "Building responsive and fast web applications using Next.js & React."
+        },
+        {
+            icon: <FaLightbulb className="text-cyan-400 text-3xl" />,
+            title: "Problem Solver",
+            desc: "Leveraging mathematical thinking to break down complex UI & backend challenges."
+        }
     ];
 
     return (
-        <section ref={sectionRef} className="bg-black text-white py-20 px-6 sm:px-10 md:px-20 lg:px-40" id="about">
-            <div className="container mx-auto">
+        <section ref={sectionRef} className="bg-[#090D16] text-white py-20 px-6 sm:px-10 md:px-20 lg:px-32" id="about">
+            <div className="max-w-6xl mx-auto">
 
-                {/* 1. Section Heading */}
+                {/* 1. Heading */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl sm:text-5xl font-bold inline-block border-b-4 border-cyan-500 pb-2">
-                        About Me
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-wide">
+                        About <span className="text-cyan-400">Me</span>
                     </h2>
-                    <p className="text-xl text-neutral-400 mt-4">
+                    <div className="w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full shadow-[0_0_10px_#22d3ee]"></div>
+                    <p className="text-gray-400 mt-4 text-base md:text-lg">
                         Transforming your digital ideas into seamless web experiences
                     </p>
                 </div>
 
-                {/* 2. Main Content: 2-Column Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                    {/* Left Column: Biography */}
-                    <div ref={textRef} className="space-y-6">
-                        <div className="flex items-center gap-4">
-                            <FaUserAlt className="text-cyan-400 text-3xl" />
-                            <h3 className="text-3xl font-semibold">Who Am I?</h3>
-                        </div>
-
-                        <p className="text-lg text-neutral-300 leading-relaxed">
-                            Hello! I'm Nihad, a passionate <span className="font-bold text-cyan-400">Full Stack Web Developer</span>.
-                            I specialize in building clean, responsive, and user-centric web applications. Solving complex web challenges and mastering modern technologies drive my daily work.
+                {/* 2. Top Bio Section */}
+                <div ref={textRef} className="max-w-4xl mx-auto text-center space-y-6 mb-16">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-gray-100">
+                        Hello! I'm <span className="text-cyan-400 font-bold">Nihad</span>, a passionate Full Stack Web Developer.
+                    </h3>
+                    <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+                        I specialize in building clean, responsive, and user-centric web applications using modern MERN Stack & Next.js technologies. Solving complex web challenges, optimizing performance, and mastering modern frameworks drive my daily work.
+                    </p>
+                    <div className="p-6 bg-[#111726]/80 border border-gray-800 rounded-2xl backdrop-blur-sm max-w-2xl mx-auto shadow-lg">
+                        <p className="text-cyan-300 italic text-sm md:text-base">
+                            "Dedicated to collaborating with clients and teams to deliver web solutions that not only elevate business value but also offer an outstanding user experience."
                         </p>
-
-                        <div className="bg-neutral-900 p-6 rounded-2xl border border-cyan-500/10">
-                            <p className="text-neutral-400">
-                                I am dedicated to collaborating with teams to deliver web solutions that not only elevate your business but also offer an outstanding user experience.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Right Column: Technical Skills */}
-                    <div className="mt-12 lg:mt-0">
-                        <h4 className="text-2xl font-semibold mb-8 text-cyan-400">Technical Skills</h4>
-
-                        {/* Skills Grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                            {skillsList.map((skill, index) => {
-                                const SkillIcon = skill.icon;
-
-                                return (
-                                    <div
-                                        key={skill.name}
-                                        ref={el => skillItemsRef.current[index] = el}
-                                        className="flex flex-col items-center gap-3 bg-neutral-950 p-6 rounded-2xl border-2 border-transparent hover:border-cyan-400 hover:scale-105 transition-all duration-300 shadow-xl group"
-                                    >
-                                        <SkillIcon className="text-6xl text-cyan-400/70 group-hover:text-cyan-400 group-hover:rotate-12 transition-transform" />
-                                        <p className="text-sm font-semibold tracking-wider">{skill.name}</p>
-                                    </div>
-                                );
-                            })}
-                        </div>
                     </div>
                 </div>
 
-                {/* 3. Education & Credentials */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 pt-16 border-t border-cyan-500/20">
-                    <div className="flex items-start gap-5 bg-neutral-900 p-8 rounded-3xl">
-                        <FaGraduationCap className="text-cyan-400 text-4xl mt-1" />
+                {/* 3. Core Highlights Grid (3 Columns) */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    {highlights.map((item, index) => (
+                        <div
+                            key={index}
+                            ref={el => (cardsRef.current[index] = el)}
+                            className="bg-[#111726]/60 border border-gray-800 p-6 rounded-2xl flex flex-col items-center text-center hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300 group"
+                        >
+                            <div className="mb-4 p-4 rounded-2xl bg-cyan-950/40 border border-cyan-800/40 group-hover:scale-110 transition-transform duration-300">
+                                {item.icon}
+                            </div>
+                            <h4 className="text-xl font-bold text-gray-200 mb-2 group-hover:text-cyan-400 transition-colors">
+                                {item.title}
+                            </h4>
+                            <p className="text-gray-400 text-sm leading-relaxed">
+                                {item.desc}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* 4. Education & Credentials (2 Columns) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-10 border-t border-gray-800/80">
+                    <div
+                        ref={el => (cardsRef.current[3] = el)}
+                        className="flex items-center gap-5 bg-[#111726]/80 border border-gray-800 p-6 md:p-8 rounded-2xl hover:border-cyan-400/40 transition-all duration-300"
+                    >
+                        <div className="p-4 bg-cyan-950/50 rounded-2xl border border-cyan-800/40 text-cyan-400 text-3xl">
+                            <FaGraduationCap />
+                        </div>
                         <div>
-                            <h5 className="text-xl font-bold">B.Sc. (Hons) in Mathematics</h5>
-                            <p className="text-neutral-400 mt-1">2nd Year Student</p>
+                            <h5 className="text-lg md:text-xl font-bold text-gray-100">B.Sc. (Hons) in Mathematics</h5>
+                            <p className="text-cyan-400 text-sm font-medium mt-1">2nd Year Student</p>
                         </div>
                     </div>
 
-                    <div className="flex items-start gap-5 bg-neutral-900 p-8 rounded-3xl">
-                        <FaCertificate className="text-cyan-400 text-4xl mt-1" />
+                    <div
+                        ref={el => (cardsRef.current[4] = el)}
+                        className="flex items-center gap-5 bg-[#111726]/80 border border-gray-800 p-6 md:p-8 rounded-2xl hover:border-cyan-400/40 transition-all duration-300"
+                    >
+                        <div className="p-4 bg-cyan-950/50 rounded-2xl border border-cyan-800/40 text-cyan-400 text-3xl">
+                            <FaCertificate />
+                        </div>
                         <div>
-                            <h5 className="text-xl font-bold">Full Stack Web Development</h5>
-                            <p className="text-neutral-400 mt-1">Self-Taught & Project-Driven</p>
+                            <h5 className="text-lg md:text-xl font-bold text-gray-100">Full Stack Web Development</h5>
+                            <p className="text-cyan-400 text-sm font-medium mt-1">Self-Taught & Project-Driven</p>
                         </div>
                     </div>
                 </div>
