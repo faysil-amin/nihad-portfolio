@@ -27,10 +27,10 @@ export default function Navbar() {
 
                 {/* navigate - Responsive (Hidden on mobile) */}
                 <div className="hidden md:flex items-center gap-6 font-medium text-white">
-                    <Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link>
-                    <Link href="/about" className="hover:text-cyan-400 transition-colors">About</Link>
-                    <Link href="/skills" className="hover:text-cyan-400 transition-colors">Skill</Link>
-                    <Link href="/contact" className="hover:text-cyan-400 transition-colors">Contact</Link>
+                    <a href="#home" className="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
+                    <a href="/skills" className="hover:text-cyan-400 transition-colors">Skill</a>
+                    <a href="/contact" className="hover:text-cyan-400 transition-colors">Contact</a>
                 </div>
 
                 {/* Resume button*/}
