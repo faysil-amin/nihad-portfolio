@@ -37,7 +37,7 @@ export default function Banner() {
 
     return (
         <section id="home">
-            <div className='bg-black md:h-screen'>
+            <div className='bg-black md:h-screen pb-8'>
                 <div className="flex flex-col-reverse md:grid md:grid-cols-12 pt-20 px-6 sm:px-12">
                     {/* left banner section */}
                     <div className='md:col-span-4 pt-6 z-10'>
@@ -86,19 +86,23 @@ export default function Banner() {
                             </h1>
                             <div
                                 ref={imageRef}
-                                className="relative z-10 w-[60%] sm:w-[55%] md:w-[80%] lg:w-[75%] max-w-[700px] flex justify-center items-end h-full "
+                                className="relative z-10 w-[60%] sm:w-[55%] md:w-[80%] lg:w-[75%] max-w-[700px] flex justify-center items-end h-full"
                             >
+                                {/* 1. Bottom Glow Shadow (ইমেজের ঠিক নিচে বসবে) */}
+                                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-12 bg-cyan-500/40 blur-2xl rounded-full pointer-events-none z-0"></div>
+
+                                {/* 2. Profile Image */}
                                 <Image
                                     src="/banner-image.png"
                                     alt="Nihad's Profile"
                                     width={900}
                                     height={900}
                                     priority
-                                    className=" w-full h-auto max-h-[58vh] lg:max-h-[68vh] object-contain drop-shadow-[0_15px_45px_rgba(6,182,212,0.4)] transition-transform duration-500 hover:scale-[1.02]"
+                                    className="relative z-10 w-full h-auto max-h-[58vh] lg:max-h-[68vh] object-contain transition-transform duration-500 hover:scale-[1.02]"
                                 />
 
-                                {/* Bottom Black Fade */}
-                                <div className=" absolute -bottom-10 left-0 w-full h-28 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none"></div>
+                                {/* 3. Bottom Black Fade */}
+                                <div className="absolute -bottom-10 -mx-6 left-0 right-0 h-28 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-20 md:mx-0 md:w-full"></div>
                             </div>
                         </div>
                     </div>
