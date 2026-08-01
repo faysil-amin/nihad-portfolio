@@ -1,6 +1,7 @@
 import { Bebas_Neue, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Component/Navbar";
+import SmoothScrollWrapper from "./Component/SmoothScrollWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,9 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         <main className="flex-grow">
-          {children}
+          <SmoothScrollWrapper>
+            {children}
+          </SmoothScrollWrapper>
         </main>
       </body>
     </html>
