@@ -61,17 +61,17 @@ const About = () => {
         {
             icon: <FaCode className="text-cyan-400 text-3xl" />,
             title: "Clean Code",
-            desc: "Writing maintainable, scalable, and optimized code for better performance."
+            desc: "Writing scalable, modular, and optimized code for modern web architectures."
         },
         {
             icon: <FaRocket className="text-cyan-400 text-3xl" />,
             title: "Fast Delivery",
-            desc: "Building responsive and fast web applications using Next.js & React."
+            desc: "Building high-performance, responsive web applications using Next.js & React."
         },
         {
             icon: <FaLightbulb className="text-cyan-400 text-3xl" />,
             title: "Problem Solver",
-            desc: "Leveraging mathematical thinking to break down complex UI & backend challenges."
+            desc: "Leveraging mathematical logic to solve complex algorithms & state management."
         }
     ];
 
@@ -86,7 +86,7 @@ const About = () => {
                     </h2>
                     <div className="w-24 h-1 bg-cyan-400 mx-auto mt-3 rounded-full shadow-[0_0_10px_#22d3ee]"></div>
                     <p className="text-gray-400 mt-4 text-base md:text-lg">
-                        Transforming your digital ideas into seamless web experiences
+                        Crafting modern, scalable, and high-performance web applications with clean code
                     </p>
                 </div>
 
@@ -96,11 +96,11 @@ const About = () => {
                         Hello! I'm <span className="text-cyan-400 font-bold">Nihad</span>, a passionate Full Stack Web Developer.
                     </h3>
                     <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                        I specialize in building clean, responsive, and user-centric web applications using modern MERN Stack & Next.js technologies. Solving complex web challenges, optimizing performance, and mastering modern frameworks drive my daily work.
+                        I specialize in building dynamic, user-centric web applications using React, Next.js, Node.js, Express, and MongoDB. With a strong foundation in analytical problem-solving and modern JavaScript frameworks, I focus on writing maintainable code, creating smooth GSAP animations, and optimizing web performance.
                     </p>
                     <div className="p-6 bg-[#111726]/80 border border-gray-800 rounded-2xl backdrop-blur-sm max-w-2xl mx-auto shadow-lg">
                         <p className="text-cyan-300 italic text-sm md:text-base">
-                            "Dedicated to collaborating with clients and teams to deliver web solutions that not only elevate business value but also offer an outstanding user experience."
+                            "Driven by logic, design, and continuous learning to build digital experiences that deliver real value."
                         </p>
                     </div>
                 </div>
@@ -132,12 +132,12 @@ const About = () => {
                         ref={el => (cardsRef.current[3] = el)}
                         className="flex items-center gap-5 bg-[#111726]/80 border border-gray-800 p-6 md:p-8 rounded-2xl hover:border-cyan-400/40 transition-all duration-300"
                     >
-                        <div className="p-4 bg-cyan-950/50 rounded-2xl border border-cyan-800/40 text-cyan-400 text-3xl">
+                        <div className="p-4 bg-cyan-950/50 rounded-2xl border border-cyan-800/40 text-cyan-400 text-3xl flex-shrink-0">
                             <FaGraduationCap />
                         </div>
                         <div>
                             <h5 className="text-lg md:text-xl font-bold text-gray-100">B.Sc. (Hons) in Mathematics</h5>
-                            <p className="text-cyan-400 text-sm font-medium mt-1">2nd Year Student</p>
+                            <p className="text-cyan-400 text-sm font-medium mt-1">2nd Year Student — Strong Analytical & Logic Background</p>
                         </div>
                     </div>
 
@@ -145,12 +145,12 @@ const About = () => {
                         ref={el => (cardsRef.current[4] = el)}
                         className="flex items-center gap-5 bg-[#111726]/80 border border-gray-800 p-6 md:p-8 rounded-2xl hover:border-cyan-400/40 transition-all duration-300"
                     >
-                        <div className="p-4 bg-cyan-950/50 rounded-2xl border border-cyan-800/40 text-cyan-400 text-3xl">
+                        <div className="p-4 bg-cyan-950/50 rounded-2xl border border-cyan-800/40 text-cyan-400 text-3xl flex-shrink-0">
                             <FaCertificate />
                         </div>
                         <div>
                             <h5 className="text-lg md:text-xl font-bold text-gray-100">Full Stack Web Development</h5>
-                            <p className="text-cyan-400 text-sm font-medium mt-1">Self-Taught & Project-Driven</p>
+                            <p className="text-cyan-400 text-sm font-medium mt-1">MERN Stack & Next.js Specialist (Project-Driven)</p>
                         </div>
                     </div>
                 </div>
