@@ -36,7 +36,7 @@ export default function Projects() {
             title: "Developer Portfolio & Showcase",
             description: "A modern developer portfolio built with Next.js and Tailwind CSS, featuring smooth Lenis scroll dynamics, immersive GSAP animations, interactive project showcases, and a fully responsive UI design.",
             image: "/portfolio.png",
-            tags: ["Next.js", "React", "GSAP", "Lenis Scroll", "Tailwind CSS"],
+            tags: ["Next.js", "React", "GSAP", "Lenis Scroll", "Tailwind CSS", "MongoDB"],
             liveLink: "https://nihadportfolio.vercel.app/",
             githubClient: "https://github.com/faysil-amin/nihad-portfolio",
             githubServer: null,
