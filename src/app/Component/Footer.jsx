@@ -75,7 +75,7 @@ export default function Footer() {
 
                             {/* YouTube */}
                             <a
-                                href="https://www.youtube.com/@NihadAcademy" // আপনার ইউটিউব চ্যানেলের সঠিক URL এখানে দিন
+                                href="https://www.youtube.com/@NihadAcademy"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-[#111726] border border-gray-800 text-gray-300 hover:text-red-500 hover:border-red-500/50 rounded-xl transition-all duration-300"
