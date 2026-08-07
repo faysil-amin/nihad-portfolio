@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FaGithub, FaLinkedin, FaFacebook, FaYoutube, FaArrowUp } from 'react-icons/fa'; // FaYoutube যোগ করা হয়েছে
+import Logo from './Logo';
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -20,9 +21,9 @@ export default function Footer() {
 
                     {/* Column 1: Brand & Bio */}
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-white tracking-wide">
-                            Nihad<span className="text-cyan-400">.dev</span>
-                        </h3>
+                        <a href="#home" className='pb-2'>
+                            <Logo />
+                        </a>
                         <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
                             Full Stack Web Developer passionate about building modern, scalable, and high-performance web applications.
                         </p>
